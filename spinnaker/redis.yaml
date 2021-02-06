@@ -1,0 +1,16 @@
+password: ENC[AES256_GCM,data:aPgFF3r96GGdvB0=,iv:h+qfZwtaYurzroAvP7uImguiLj+kQx27pElav8q5/lo=,tag:DGyL4lFvFrfdKdkHEe0zYA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault:
+    -   vault_address: http://40.122.204.70:8200
+        engine_path: sops
+        key_name: spinnaker
+        created_at: '2021-02-06T18:44:23Z'
+        enc: vault:v1:YRsGQiEUN3+GegujGWfXWuePM3bsNO/vDfy1RkhE2kqDB6lvLMDVgfDKPzXbCSZTijkrcDCLjpTGq+nz
+    lastmodified: '2021-02-06T18:44:37Z'
+    mac: ENC[AES256_GCM,data:/sNAN7glCMi0A41ruNKMeZNG9C1153s2yjwCZl2kEBLunhYC+dnYcyr9jKf4t3VUiL5iKZ5MiWp7/3tR94/a7fS907HhbOYnH+ga/SpnraOH6bbSomib+uwiLPDK/9oq+am6kIhYfy9SM8TsjUsWvLSEBc4UniwXp0iDs74WGqA=,iv:oIGz70tomTQibgwEUasLnPoen+5WteMBYQhxxp1QnX8=,tag:Go2Ld4WvbZWwc3uDQvPzmw==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.6.1

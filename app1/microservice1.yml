@@ -1,0 +1,16 @@
+dbpassword: ENC[AES256_GCM,data:bX2mrR88ocxCrLXX45r3g4mnGw==,iv:6HxtWSdlZVTnar5dwczRpo+frLmbXok+TCsLor2VYbs=,tag:TbrFTTZqCEYAi4yv01Tm+w==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault:
+    -   vault_address: http://40.122.204.70:8200
+        engine_path: sops
+        key_name: app1
+        created_at: '2021-02-06T18:20:13Z'
+        enc: vault:v1:AyQrlkrUgsrNVnJ2hQrNmtXmXNhv3L0mp8jNI8nwBChYJhuojzrzJF3LsOmc/6ybAwYrS1SLS2E+UMlr
+    lastmodified: '2021-02-06T18:20:13Z'
+    mac: ENC[AES256_GCM,data:4MuwLjXX3LToGRiK87M4k3ePBi8fjngg1DqUgz20DGanEGyuAuUt6EWmVgaR2zeBArlb3vw2uXZWo5J5fBeMi3fd8vp+hc6/XLUzw2aFbAgoNu5j5lkps+EDmIy+4AL5oWeRBS9ZwVnb3rIgvGv/nYwvIaOSwckQjuiZFFut3QE=,iv:h+SKN01uuDEDdtEn7jvlausPCOT54m/QdSER95hhDB4=,tag:AyYkUSAu85ybOujYv+2eag==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.6.1
