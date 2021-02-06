@@ -25,7 +25,7 @@ jobs:
       - name: Publish secrets
         env:
           VAULT_ADDR: http://40.122.204.70:8200
-          VAULT_TOKEN: "{{ secrets.VAULT_TOKEN }}"
+          VAULT_TOKEN: {{ secrets.VAULT_TOKEN }}
         run: |
           set -e
           for changed_file in ${{ steps.files.outputs.added_modified }}; do
