@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push_to_vault:
+    runs-on: ubuntu-latest
+    name: Push changed files to Vault
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - id: files
+        name: get modified files
+        uses: jitterbit/get-changed-files@v1
+      - name: Install sops
+        run: |
+          set -e
+          curl -o sops -L https://github.com/mozilla/sops/releases/download/v3.6.1/sops-v3.6.1.linux
+          chmod +x sops
+          mv sops /usr/local/bin/
+      - name: Publish secrets
+        env:
+          VAULT_ADDR: http://40.122.204.70:8200
+          VAULT_TOKEN: "{{ secrets.VAULT_TOKEN }}"
+        run: |
+          set -e
+          for changed_file in ${{ steps.files.outputs.added_modified }}; do
+            sops publish "${changed_file}"
+          done
