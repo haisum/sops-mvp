@@ -1,16 +1,16 @@
 creation_rules:
-  - path_regex: app1/*
+  - path_regex: secrets/app1/*
     hc_vault_transit_uri: "http://40.122.204.70:8200/v1/sops/keys/app1"
-  - path_regex: spinnaker/*
+  - path_regex: secrets/spinnaker/*
     hc_vault_transit_uri: "http://40.122.204.70:8200/v1/sops/keys/spinnaker"
 destination_rules:
   - vault_path: "app1/"
     vault_kv_mount_name: "secret/" # default
     vault_kv_version: 2 # default
-    path_regex: app1/*
+    path_regex: secrets/app1/*
     omit_extensions: true
   - vault_path: "spinnaker/"
     vault_kv_mount_name: "secret/" # default
     vault_kv_version: 2 # default
-    path_regex: spinnaker/*
+    path_regex: secrets/spinnaker/*
     omit_extensions: true
