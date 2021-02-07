@@ -2,9 +2,8 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - ".github/**"
-      - ".sops.yaml"
+    paths:
+      - "secrets/*"
 
 jobs:
   push_to_vault:
@@ -29,5 +28,7 @@ jobs:
         run: |
           set -e
           for changed_file in ${{ steps.files.outputs.added_modified }}; do
-            sops publish -y "${changed_file}"
+            if [[ "$changed_file" =~ "secrets" ]]; then
+              sops publish -y "${changed_file}"
+            fi
           done
