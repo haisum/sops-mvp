@@ -28,6 +28,7 @@ jobs:
         run: |
           set -e
           for changed_file in ${{ steps.files.outputs.added_modified }}; do
+            echo "$changed_file";
             if [[ "$changed_file" =~ "secrets" ]]; then
               sops publish -y "${changed_file}"
             fi
